@@ -12,9 +12,11 @@ const Home = () => {
   };
 
   return (
-    <div>
-      <SearchBar onSearch={handleSearch} />
-      <WeatherCard weather={weather} />
+    <div className="home-container">
+      <div className="group rounded-xl p-4">
+        <SearchBar onSearch={handleSearch} />
+        <WeatherCard weather={weather} />
+      </div>
     </div>
   );
 };

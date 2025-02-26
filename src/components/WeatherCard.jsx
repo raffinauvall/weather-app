@@ -4,13 +4,19 @@ import PropTypes from "prop-types";
 const WeatherCard = ({ weather }) => {
   if (!weather) return <p>Cari kota dulu...</p>;
 
+  const iconUrl = `https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`;
   return (
-    <div className="weather-card">
-      <h2>
-        {weather.name}, {weather.sys.country}
-      </h2>
-      <h3>{weather.main.temp}°C</h3>
-      <p>{weather.weather[0].description}</p>
+    <div className="weather-card w-100">
+      <div className="flex justify-between items-center">
+        <div>
+          <h2 className="font-bold text-white text-2xl text-left">
+            {weather.name}, {weather.sys.country}
+          </h2>
+          <h3 className="text-left text-white">{weather.main.temp}°C</h3>
+          <p className="capitalize text-white text-left">{weather.weather[0].description}</p>
+        </div>
+        <img src={iconUrl} alt={weather.weather[0].description} />
+      </div>
     </div>
   );
 };
@@ -28,6 +34,7 @@ WeatherCard.propTypes = {
     weather: PropTypes.arrayOf(
       PropTypes.shape({
         description: PropTypes.string,
+        icon: PropTypes.string
       })
     ),
   }),
