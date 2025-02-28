@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import SearchBar from "../components/SearchBar";
 import WeatherCard from "../components/WeatherCard";
+import PredictionCard from "../components/PredictionCard"
 import { fetchWeather } from "../services/weatherApi";
 
 const Home = () => {
@@ -16,6 +17,9 @@ const Home = () => {
       <div className="group rounded-xl p-4">
         <SearchBar onSearch={handleSearch} />
         <WeatherCard weather={weather} />
+      </div>
+      <div className="group2 rounded-xl">
+        <PredictionCard />
       </div>
     </div>
   );

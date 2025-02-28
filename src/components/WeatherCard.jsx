@@ -1,8 +1,8 @@
-import React from "react";
+
 import PropTypes from "prop-types";
 
 const WeatherCard = ({ weather }) => {
-  if (!weather) return <p>Cari kota dulu...</p>;
+  if (!weather) return;
 
   const iconUrl = `https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`;
   return (
