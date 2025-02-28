@@ -17,7 +17,7 @@ const SearchBar = ({ onSearch }) => {
             <input
             type="text"
             className="border border-white text-white rounded h-auto p-2 w-full mb-2"
-            placeholder="Masukkan nama kota..."
+            placeholder="Enter the city name"
             value={city}
             onChange={(e) => setCity(e.target.value)}
         />
@@ -25,7 +25,7 @@ const SearchBar = ({ onSearch }) => {
         type="submit"
         className="bg-zinc-700 mb-4 text-white p-1 rounded w-full"
         >
-        Cari cuaca
+        Look for the weather
         </button>
         </form>
     );

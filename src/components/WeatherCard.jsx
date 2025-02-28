@@ -10,7 +10,7 @@ const WeatherCard = ({ weather }) => {
       <div className="flex justify-between items-center">
         <div>
           <h2 className="font-bold text-white text-2xl text-left">
-            {weather.name}, {weather.sys.country}
+            {weather.name},{weather.province}, {weather.sys.country}
           </h2>
           <h3 className="text-left text-white">{weather.main.temp}°C</h3>
           <p className="capitalize text-white text-left">{weather.weather[0].description}</p>
@@ -25,8 +25,9 @@ const WeatherCard = ({ weather }) => {
 WeatherCard.propTypes = {
   weather: PropTypes.shape({
     name: PropTypes.string,
+    province: PropTypes.string,
     sys: PropTypes.shape({
-      country: PropTypes.string,
+    country: PropTypes.string,
     }),
     main: PropTypes.shape({
       temp: PropTypes.number,
